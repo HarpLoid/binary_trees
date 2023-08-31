@@ -10,17 +10,17 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-    int perfect = 0;
+	int perfect = 0;
 
-    if (tree)
-    {
-        if (binary_tree_balance(tree) == 0)
-        {
-            perfect = 1;
-        }
-    }
-    
-    return (perfect);
+	if (tree)
+	{
+		if (binary_tree_balance(tree) == 0)
+		{
+			perfect = 1;
+		}
+	}
+
+	return (perfect);
 }
 
 /**
@@ -34,15 +34,15 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-    size_t l = 0, r = 0, balance_factor = 0;
+	size_t l = 0, r = 0, balance_factor = 0;
 
 	if (tree)
-    {
-        l = (tree->left) ? binary_tree_balance(tree->left) + 1 : 0;
-        r = (tree->right) ? binary_tree_balance(tree->right) + 1 : 0;
+	{
+		l = (tree->left) ? binary_tree_balance(tree->left) + 1 : 0;
+		r = (tree->right) ? binary_tree_balance(tree->right) + 1 : 0;
 
-        balance_factor = l - r;
-    }
+		balance_factor = l - r;
+	}
 
-    return (balance_factor);
+	return (balance_factor);
 }
