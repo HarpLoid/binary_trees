@@ -9,7 +9,12 @@
 */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
-	binary_tree_t *uncle = NULL, *grandpa = node->parent->parent;
+	binary_tree_t *uncle = NULL, *grandpa;
+
+	if (!node->parent)
+		return	(NULL);
+
+	grandpa = node->parent->parent;
 
 	if (node && grandpa)
 	{
